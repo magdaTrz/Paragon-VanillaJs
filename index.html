@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+        <title>Receipt </title>
+    </head>
+    <body>
+        <div class="ticket">
+
+        <hr>
+        <p> PARAGON </p>
+        <hr>
+<!-- Paragon zakupy  -->
+            <table>
+                <thead>
+                    <tr>
+                        <th class="id">LP</th>
+                        <th class="description"> NAZWA</th>
+                        <th class="quantity"> ILOŚĆ</th>
+                        <th class="price"> $$</th>
+                        <th class="total"> SUMA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="id">1</td>
+                        <td class="description">ARDUINO UNO R3</td>
+                        <td class="quantity">1.00</td>
+                        <td class="price">$25.00</td>
+                        <td class="total"></td>
+                    </tr>
+                    
+
+
+                </tbody>
+
+            </table>
+<!-- Suma za zakupy  -->
+                    <div id="totalSum">
+                        <br>
+                        <td class="quantity"></td>
+                        <td class="description">TOTAL</td>
+                        <td class="sum">$55.00</td>
+                    </div>
+        <br>
+<br>
+</div>
+
+<!-- Dodawanie Edycja i Usuwanie -->
+        <div class="addContainer">
+<form>
+    <h5> Nowa Pozycja:  </h5>
+    <label for newProductDescription> Nazwa:  </label>
+    <input id="newProductDescription" type="text">
+<br>
+    <label for newPeoductDescription> Ilość:    </label>
+    <input id="newPeoductDescription" type="text">
+<br>
+    <label for newPeoductDescription> Cena:  </label>
+    <input id="newPeoductDescription" type="text">
+<br>
+</form>
+<button> Dodaj</button>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>

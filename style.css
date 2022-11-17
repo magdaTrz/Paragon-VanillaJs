@@ -1,0 +1,36 @@
+body {
+    padding: 10%;
+}
+
+
+td {
+    padding-left: 2;
+    padding-right: 2%;
+}
+
+th {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+#totalSum {
+    text-align: center;
+}
+
+#edit {
+
+}
+
+.addContainer {
+    width: 500px;
+    clear: both;    
+    background-color: whitesmoke;
+    margin-top: 10%;
+    padding: 2%;
+  }
+  
+  .addContainer input {
+    width: 100%;
+    clear: both;
+  }
+  
