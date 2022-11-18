@@ -1,36 +1,31 @@
 body {
     padding: 10%;
+
+    justify-content: center;
 }
 
-
-td {
-    padding-left: 2;
-    padding-right: 2%;
-}
-
-th {
-    padding-left: 2%;
-    padding-right: 2%;
-}
-
-#totalSum {
-    text-align: center;
-}
-
-#edit {
-
-}
-
-.addContainer {
-    width: 500px;
-    clear: both;    
-    background-color: whitesmoke;
-    margin-top: 10%;
-    padding: 2%;
-  }
-  
-  .addContainer input {
+table {
     width: 100%;
-    clear: both;
-  }
-  
+}
+
+
+.receipt-container {
+    align-items: center;
+}
+.receipt-list {
+    min-width: 30%;
+}
+
+.product-item {
+    margin: 15%;
+    padding: 2%;
+}
+
+.delete-btn {
+    margin: 10%;
+}
+
+.product {
+    justify-content: space-between;
+    background-color: blueviolet;
+}
