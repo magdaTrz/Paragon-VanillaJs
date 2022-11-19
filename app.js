@@ -73,4 +73,15 @@ function addProduct(event){
 function deleteEditProduct(event) {
     console.log(event.target);
     event.target.style.backgroundColor = "red";
+    const item = event.target;
+    //delete product
+    if(item.classList[0] === "delete-button") {
+        const element = item.parentElement;
+        element.remove();
+    }
+
+    //edit product
+    if(item.classList[0] === "edit-button") {
+        
+    }
 }
