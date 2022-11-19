@@ -1,6 +1,3 @@
-//id
-idNumer = 1;
-
 //Selectors
 //adding new Product
 const newDescriptionInput = document.querySelector('#input-newProductDescription');
@@ -8,7 +5,7 @@ const newQuantityInput = document.querySelector('#input-newProductQuantity');
 const newPriceInput = document.querySelector('#input-newProductPrice');
 const newProductButton = document.querySelector('.newProduct-button');
 const receiptList = document.querySelector(".receipt-list");
- var products = [];
+var products = [];
 
 //Event Listeners
 document.addEventListener("DOMContentLoaded", getProducts);
@@ -17,10 +14,7 @@ receiptList.addEventListener('click', deleteEditProduct);
 
 //Functions
 function addProduct(event) {
-  console.log('działa')
   event.preventDefault(); //prevent form from submitting
-
-
 
   //div
   const productDiv = document.createElement('tr'); //toodoDiv
@@ -32,7 +26,7 @@ function addProduct(event) {
   const priceTd = document.createElement('td');
   const totalTd = document.createElement('td');
 
-  idTd.innerText = idNumer; 
+  idTd.innerText = document.getElementsByTagName('tr').length; 
   descriptionTd.innerText = newDescriptionInput.value; 
   quantityTd.innerText = newQuantityInput.value; 
   priceTd.innerText = newPriceInput.value;
@@ -41,15 +35,13 @@ function addProduct(event) {
 
   //create a new product object
   let product = {
-    id: idNumer,
+    id: document.getElementsByTagName('tr').length,
     description: newDescriptionInput.value,
     quantity: newQuantityInput.value,
     price: newPriceInput.value,
     total: total
   }
   products.push(product);
-  console.log("cała lista: "+JSON.stringify(products));
-  console.log("produkt: " + JSON.stringify(product));
 
   idTd.classList.add("product-item"); //toodo-item
   descriptionTd.classList.add("product-item");
@@ -63,14 +55,9 @@ function addProduct(event) {
   productDiv.appendChild(priceTd);
   productDiv.appendChild(totalTd);
 
-  
- console.log("nazwa: " + product.description); 
- console.log("produkt: " + product.price);
-
   //add to localStorage
   saveLocalReceipt(JSON.stringify(products));
-  //localStorage.setItem("MyReceipt", JSON.stringify(products));
-
+  
   //Delete product
   const deleteButton = document.createElement("button");
   deleteButton.innerHTML = "<td>Delete </td>";
@@ -90,8 +77,7 @@ function addProduct(event) {
   newDescriptionInput.value = "";
   newPriceInput.value = "";
   newQuantityInput.value = "";
-  //increase id number
-  idNumer++;
+
 
 }
 
@@ -125,9 +111,15 @@ function saveLocalReceipt(product) {
   let productsLS;
   if (localStorage.getItem("MyReceipt") === null) {
     productsLS = [];
-    console.log("brak produktów")
+    console.log("Brak produktów do odtworzenia paragonu.")
+    var idNumer = 1;
+
   } else {
     productsLS = JSON.parse(localStorage.getItem('MyReceipt'));
+    console.log("Odtworzono paragon z Local Storage");
+    console.log(productsLS.length);
+    var idNumber = productsLS.length + 1;
+    
   }
   productsLS.push(product);
   localStorage.setItem("MyReceipt", JSON.stringify(products));
@@ -152,7 +144,7 @@ function getProducts() {
     const priceTd = document.createElement('td');
     const totalTd = document.createElement('td');
 
-    idTd.innerText = product.id;    console.log("Id: "+product.id);
+    idTd.innerText = product.id;
     descriptionTd.innerText = product.description;
     quantityTd.innerText = product.quantity;
     priceTd.innerText = product.price;
@@ -189,13 +181,17 @@ function getProducts() {
 }
 
 function removeLocalStorageProduct(product) {
-  let products;
+  let productsLS;
   //check if some product already exists
-  if (localStorage.getItem('products') === null) {
-    products = [];
+  if (localStorage.getItem('MyReceipt') === null) {
+    productsLS = [];
   } else {
-    products = JSON.parse(localStorage.getItem('products'));
+    productsLS = JSON.parse(localStorage.getItem('MyReceipt'));
   }
-  const prodctsIndex = products.findIndex
-  console.log(product.children);
+  const productsIndex = product.children[0].innerText;
+  productsLS.splice(productsLS.indexOf(productsIndex), 1);
+  //productsLS.splice(products.id, 1);
+  console.log(product.id);
+  localStorage.setItem("MyReceipt", JSON.stringify(products));
+
 }
