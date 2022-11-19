@@ -1,3 +1,6 @@
+//id 
+idNumer = 2;
+
 //Selectors
 //adding new Product
 const newDescriptionInput = document.querySelector('#input-newProductDescription');
@@ -6,11 +9,10 @@ const newPriceInput = document.querySelector('#input-newProductPrice');
 const newProductButton = document.querySelector('.newProduct-button');
 const receiptList = document.querySelector(".receipt-list");
 
-//sum
-
-
 //Event Listeners
 newProductButton.addEventListener('click', addProduct);
+receiptList.addEventListener('click', deleteEditProduct);
+
 //Functions
 function addProduct(event){
     event.preventDefault(); //prevent form from submitting
@@ -25,11 +27,12 @@ function addProduct(event){
     const priceTd = document.createElement('td');
     const totalTd = document.createElement('td');
 
-    idTd.innerText = "43";
-    descriptionTd.innerText = "bla"
-    quantityTd.innerText = "blssssssssssssa"
-    priceTd.innerText = "bla"
-    totalTd.innerText = "bla" 
+    idTd.innerText = idNumer;
+    descriptionTd.innerText = newDescriptionInput.value;
+    quantityTd.innerText = newQuantityInput.value;
+    priceTd.innerText = newPriceInput.value;
+    const total = (newQuantityInput.value) * (newPriceInput.value)
+    totalTd.innerText = total
 
     idTd.classList.add("product-item"); //toodo-item
     descriptionTd.classList.add("product-item");
@@ -46,9 +49,28 @@ function addProduct(event){
     //Delete product
     const deleteButton = document.createElement("button");
     deleteButton.innerHTML = "<td>Delete </td>";
-    deleteButton.classList.add("delete-btn");
+    deleteButton.classList.add("delete-button");
     productDiv.appendChild(deleteButton);
+
+    //Edit button
+    const editButton = document.createElement("button");
+    editButton.innerHTML = "<td>Edit</td>";
+    editButton.classList.add("edit-button");
+    productDiv.appendChild(editButton);
 
     //append to list
     receiptList.appendChild(productDiv);
+    
+    //clear imputs
+    newDescriptionInput.value = "";
+    newPriceInput.value = "";
+    newQuantityInput.value = "";
+    //increase id number
+    idNumer++;
+
+}
+
+function deleteEditProduct(event) {
+    console.log(event.target);
+    event.target.style.backgroundColor = "red";
 }
