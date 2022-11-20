@@ -87,6 +87,9 @@ function deleteEditProduct(event) {
   //delete product
   if (item.classList[0] === "delete-button") {
     const element = item.parentElement;
+    const idElement = element.firstChild;
+    const idElementText = idElement.innerHTML
+    console.log("item id:"+ idElementText);
     removeLocalStorageProduct(element);
     element.remove();
   }
@@ -112,14 +115,10 @@ function saveLocalReceipt(product) {
   if (localStorage.getItem("MyReceipt") === null) {
     productsLS = [];
     console.log("Brak produktów do odtworzenia paragonu.")
-    var idNumer = 1;
 
   } else {
     productsLS = JSON.parse(localStorage.getItem('MyReceipt'));
     console.log("Odtworzono paragon z Local Storage");
-    console.log(productsLS.length);
-    var idNumber = productsLS.length + 1;
-    
   }
   productsLS.push(product);
   localStorage.setItem("MyReceipt", JSON.stringify(products));
@@ -144,7 +143,7 @@ function getProducts() {
     const priceTd = document.createElement('td');
     const totalTd = document.createElement('td');
 
-    idTd.innerText = product.id;
+    idTd.innerText = document.getElementsByTagName('tr').length;
     descriptionTd.innerText = product.description;
     quantityTd.innerText = product.quantity;
     priceTd.innerText = product.price;
@@ -182,16 +181,18 @@ function getProducts() {
 
 function removeLocalStorageProduct(product) {
   let productsLS;
+  const idElement = product.firstChild;
+  const idElementText = idElement.innerHTML //wyciagamy element id i bierzemy jego tekst
+  console.log("item id:"+ idElementText);
   //check if some product already exists
   if (localStorage.getItem('MyReceipt') === null) {
     productsLS = [];
   } else {
     productsLS = JSON.parse(localStorage.getItem('MyReceipt'));
+    console.log("get item: "+localStorage.getItem('MyReceipt'))
   }
-  const productsIndex = product.children[0].innerText;
-  productsLS.splice(productsLS.indexOf(productsIndex), 1);
-  //productsLS.splice(products.id, 1);
-  console.log(product.id);
-  localStorage.setItem("MyReceipt", JSON.stringify(products));
+
+  console.log(productsLS.splice((idElementText-1), 1));
+  localStorage.setItem("MyReceipt", JSON.stringify(productsLS));
 
 }
