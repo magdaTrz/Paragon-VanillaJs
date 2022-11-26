@@ -1,59 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paragon</title>
-    <link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,400;1,200&family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://kit.fontawesome.com/66ac5c1055.js" crossorigin="anonymous"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paragon</title>
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,400;1,200&family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+  <script src="https://kit.fontawesome.com/66ac5c1055.js" crossorigin="anonymous"></script>
 
 </head>
+
 <body>
-    <header>
-        <h2>Dodaj nowy produkt</h2>
-        <form id="new-product-form">
-            <input type="text" id="new-product-name-input" name="nameNewProduct" placeholder="nazwa produktu">
-            <input type="text" id="new-product-quantity-input" name="quantityNewProduct" placeholder="ilość produktu">
-            <input type="text" id="new-product-price-input" name="priceNewProduct" placeholder="cena produktu">
+  <header>
+    <h2>Dodaj nowy produkt</h2>
+    <form id="new-product-form">
+      <input type="text" id="new-product-name-input" name="nameNewProduct" placeholder="nazwa produktu">
+      <input type="text" id="new-product-quantity-input" name="quantityNewProduct" placeholder="ilość produktu">
+      <input type="text" id="new-product-price-input" name="priceNewProduct" placeholder="cena produktu">
 
-            <input type="submit" id="new-product-submit" value="Dodaj produkt">
-        </form>
+      <input type="submit" id="new-product-submit" value="Dodaj produkt">
+    </form>
 
-        <main>
-                <h2>Produkty</h2>
-            <section id="titleProducts">
-                <div>LP</div>
-                <div>Nazwa</div>
-                <div>Ilość</div>
-                <div>Cena</div>
-                <div>Suma</div>
-            </section>
-            <section id="product-list">
+    <main>
+      <h2>Produkty</h2>
+      <section id="titleProducts">
+        <div>LP</div>
+        <div>Nazwa</div>
+        <div>Ilość</div>
+        <div>Cena</div>
+        <div>Suma</div>
+      </section>
+      <section id="product-list">
 
-                    <div id="products">
-                        <div class="product">
-                            <div class="content">
-                                <input type="text" class="text" value="lp" readonly/>
-                                <input type="text" class="text" value="nazwa" readonly/>
-                                <input type="text" class="text" value="ilosc" readonly/>
-                                <input type="text" class="text" value="cena" readonly/>
-                                <input type="text" class="text" value="suma" readonly/>
-                            </div>
-                            <div class="actions">
-                                <button class="edit">Edytuj</button>
-                                <button class="delete">Usuń</button>
-                            </div>
-                        </div>
-                    </div>
-            </section>
-        </main>
-    </header>
-<script src="app.js"></script>
+        <div id="products">
+          <div class="product">
+            <div class="content">
+              <input type="text" class="text" value="lp" readonly />
+              <input type="text" class="text" value="nazwa" readonly />
+              <input type="text" class="text" value="ilosc" readonly />
+              <input type="text" class="text" value="cena" readonly />
+              <input type="text" class="text" value="suma" readonly />
+            </div>
+            <div class="actions">
+              <button class="edit">Edytuj</button>
+              <button class="delete">Usuń</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </header>
+  <script src="app.js"></script>
+  <footer>
+    <p>Stworzone przez: Sonia Becz, Zofia Łapińska, Magdalena Trzcińska </p>
+  </footer>
+
+
 </body>
+
 </html>

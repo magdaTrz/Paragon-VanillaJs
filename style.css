@@ -4,10 +4,11 @@
 }
 
 body {
-    /* display: flex; */
-    /* flex-direction: column; */
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
     font-family: 'Josefin Sans', sans-serif;
+    background-color: #2C3639;
 }
 
 header {
@@ -15,24 +16,31 @@ header {
     max-width: 900px;
     width: 100%;
     margin: 0 0;
-    color: rgb(44, 43, 41);
+    color: #DCD7C9;
+    flex-grow: 1;
+}
+
+#new-product-form {
+    color:#DCD7C9;
 }
 
 #new-product-form input:focus{
     /* display: flex; */
-    border: 2px solid rgb(112, 89, 40);
+    border: 2px solid #DCD7C9;
 }
 
 #new-product-submit {
-    border: 3px solid rgb(112, 89, 40);
+    border: 3px solid #3F4E4F;
+    font-weight: inherit;
+    font-size: 16px;
     padding: 1rem;
     border-radius: 1rem;
     margin-left: 2rem;
 }
 #new-product-submit:hover {
-    border: 3px solid rgb(112, 89, 40);
-    background-color: rgb(223, 211, 186);
-    transition: 0.4s;
+    border: 3px solid #A27B5C;
+    background-color: #A27B5C;
+    transition: 0.5s;
 }
 
 input, button { 
@@ -44,12 +52,14 @@ input, button {
  #new-product-name-input, #new-product-quantity-input, #new-product-price-input {
     flex: 1 1 0%;
     border-radius: 1rem;
-    background-color: rgb(233, 224, 214);
-    padding: 0.5rem;
+    background-color: #3F4E4F;
+    color:#DCD7C9;
+    margin-top: 1rem;
+    padding: 1rem;
  }
 
  #new-product-submit {
-    color: rgb(112, 89, 40);
+    color: #DCD7C9;
     font-weight: bold;
  }
 
@@ -58,8 +68,8 @@ input, button {
     /* justify-content: space-between; */
     border-radius: 1rem;
     margin-bottom: 0.5rem;
-    background-color: antiquewhite;
-    padding: 0.4rem;
+    background-color: #DCD7C9;
+    padding: 0.2rem;
  }
 
  #products .product .content  {
@@ -74,7 +84,7 @@ input, button {
  #products .product .actions {
     display: flex;
     border-radius: 1rem;
-    background-color: rgb(189, 181, 165,.2);
+    background-color: rgb(63, 78, 79, 0.5);
     padding: 0.4rem;
  }
 
@@ -83,7 +93,7 @@ input, button {
     display: flex;
     padding: 1rem;
     justify-content: space-between;
-    background-color: rgb(223, 211, 186);
+    background-color: #A27B5C;
     margin-top: 2rem;
     margin-bottom: 0.9rem;
     border-radius: 1rem;
@@ -122,4 +132,16 @@ h2 {
     padding: 0.5rem;
     border-radius: 1rem;
     border: 2px solid rgb(102, 42, 7);
+}
+
+.delete:hover {
+    background-color: rgb(192, 99, 63); ;
+    transition: 0.4s;
+}
+
+footer{
+    margin: auto 0;
+    text-align: center;
+    padding: 1rem;
+    font-weight: bold;
 }
