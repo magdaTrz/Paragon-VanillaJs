@@ -4,26 +4,28 @@ window.addEventListener('load', () => {
   // const newProductName = document.querySelector('#new-product-name-input');
   // const newProductQuantity = document.querySelector('#new-product-quantity-input');
   // const newProductPrice = document.querySelector('#new-product-price-input');
-
+  var i = 1;
   newProductForm.addEventListener('submit', e => {
       e.preventDefault();
 
       let toSumQuantity = e.target.elements.quantityNewProduct.value;
       let toSumPrice = e.target.elements.priceNewProduct.value;
    const product = {
-      id: 1,
+      id: i,
       name: e.target.elements.nameNewProduct.value,
       quantity: e.target.elements.quantityNewProduct.value,
       price: e.target.elements.priceNewProduct.value,
       sum: (toSumPrice * toSumQuantity)
    }
-  products.push(product);
 
-  localStorage.setItem('products', JSON.stringify(products));
+   if(validateFormNum(e.target.elements.quantityNewProduct.value) && validateFormNum(e.target.elements.priceNewProduct.value)){
+    products.push(product);
 
-  e.target.reset();
-
-  DisplayProducts();
+    localStorage.setItem('products', JSON.stringify(products));
+   }
+    e.target.reset();
+    DisplayProducts();
+    i++;
   });
 DisplayProducts();
 });
@@ -122,4 +124,13 @@ function DisplayProducts() {
 
 
   })
+}
+
+function validateFormNum(inputToValidate) {
+    if(!/^[1-999]+$/.test(inputToValidate)){
+        alert("Możesz wpisać tylko:1-999");
+        return false;
+      }
+    console.log("poprawnie");
+    return true;
 }
