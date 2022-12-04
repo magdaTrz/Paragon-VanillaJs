@@ -116,11 +116,13 @@ h2 {
     border: 2px solid rgb(112, 89, 40);
 }
 
-.edit {
-    background-color: rgb(121, 201, 181);
+.sort {
+    background-color: #A27B5C;
     padding: 0.5rem;
     border-radius: 1rem;
-    border: 2px solid rgb(99, 150, 137);
+    border: 2px solid rgb(112, 89, 40);
+    font-weight: bold;
+    font-size: large;
 }
 .edit:hover {
     padding: 0.6rem;
