@@ -22,10 +22,11 @@ window.addEventListener('load', () => {
     products.push(product);
 
     localStorage.setItem('products', JSON.stringify(products));
+    i++;
    }
     e.target.reset();
     DisplayProducts();
-    i++;
+
   });
 DisplayProducts();
 });
@@ -127,7 +128,7 @@ function DisplayProducts() {
 }
 
 function validateFormNum(inputToValidate) {
-    if(!/^[1-999]+$/.test(inputToValidate)){
+    if(isNaN(inputToValidate)){
         alert("Możesz wpisać tylko:1-999");
         return false;
       }
