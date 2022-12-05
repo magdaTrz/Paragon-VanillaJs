@@ -147,3 +147,15 @@ footer{
     padding: 1rem;
     font-weight: bold;
 }
+
+.sum{
+    display:flex;
+    /* justify-content: space-between; */
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: #DCD7C9;
+    padding: 0.2rem;
+    font-size: large;
+    text-align: center;
+    justify-content: end;
+}
