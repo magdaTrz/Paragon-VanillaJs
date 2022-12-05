@@ -1,4 +1,5 @@
 let i = 0;
+let sum = 0;
 
 window.addEventListener('load', () => {
   products =JSON.parse(localStorage.getItem('products')) || [];
@@ -67,6 +68,7 @@ function DisplayProducts() {
   deleteButton.innerHTML = 'Usuń';
 
 
+
   actions.appendChild(deleteButton);
   productItem.appendChild(content);
   productItem.appendChild(actions);
@@ -120,9 +122,14 @@ function DisplayProducts() {
     DisplayProducts();
 })
 
-
-
   })
+
+  sum = products.map(product => product.sum).reduce((partialSum, a) => partialSum + a, 0);
+
+  const sum_all = document.getElementById("sum");
+
+sum_all.value = `Razem: ${sum}`
+
 }
 
 
